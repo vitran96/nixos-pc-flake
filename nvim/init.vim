@@ -1,3 +1,5 @@
+set fileformat=unix
+
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
 "
