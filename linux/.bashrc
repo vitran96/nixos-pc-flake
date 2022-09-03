@@ -98,6 +98,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 alias doom="$HOME/.emacs.d/bin/doom"
 
+alias explorer="nautilus"
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
