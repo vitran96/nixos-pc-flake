@@ -103,6 +103,9 @@ alias doom="$HOME/.emacs.d/bin/doom"
 
 alias explorer="nautilus"
 
+alias python="python3"
+alias pip="pip3"
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
