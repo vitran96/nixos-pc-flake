@@ -13,6 +13,7 @@ set fileformat=unix
 "
 " Lazy Loading example
 " Plug 'https://github.com/scrooloose/syntastic.git', { 'on': 'SyntasticCheck' }
+" Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 call plug#begin()
 
 Plug 'scrooloose/nerdtree'
