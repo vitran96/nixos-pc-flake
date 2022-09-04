@@ -15,10 +15,6 @@
     },
     {
       "class": "flameshot"
-    },
-    {
-      "class": "+*",
-      "title": "^+*(?<=\\(DEBUG\\))$"
     }
   ],
   "skiptaskbarhidden": [],
