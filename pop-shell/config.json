@@ -17,8 +17,8 @@
       "class": "flameshot"
     },
     {
-      "class": "Godot",
-      "title": "^.+\\(DEBUG\\)$"
+      "class": "+*",
+      "title": "^+*(?<=\\(DEBUG\\))$"
     }
   ],
   "skiptaskbarhidden": [],
