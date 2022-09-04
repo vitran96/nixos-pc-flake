@@ -1,0 +1,27 @@
+{
+  "float": [
+    {
+      "class": "pop-shell-example",
+      "title": "pop-shell-example"
+    },
+    {
+      "class": "Gnome-control-center"
+    },
+    {
+      "class": "Io.elementary.appcenter"
+    },
+    {
+      "class": "Timeshift-gtk"
+    },
+    {
+      "class": "flameshot"
+    },
+    {
+      "class": "Godot",
+      "title": "^.+\\(DEBUG\\)$"
+    }
+  ],
+  "skiptaskbarhidden": [],
+  "log_on_focus": false,
+  "default_pointer_position": "TOP_LEFT"
+}
