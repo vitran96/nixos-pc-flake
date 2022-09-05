@@ -15,6 +15,12 @@
     },
     {
       "class": "flameshot"
+    },
+    {
+      "class": "Gsconnect-preferences"
+    },
+    {
+      "class": "org.gnome.Shell.Extensions"
     }
   ],
   "skiptaskbarhidden": [],
