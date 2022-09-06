@@ -21,6 +21,15 @@
     },
     {
       "class": "org.gnome.Shell.Extensions"
+    },
+    {
+      "class": "Steam"
+    },
+    {
+      "class": "1Password"
+    },
+    {
+      "class": "obs"
     }
   ],
   "skiptaskbarhidden": [],
