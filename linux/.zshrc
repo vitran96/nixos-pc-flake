@@ -138,6 +138,9 @@ alias doom="$HOME/.emacs.d/bin/doom"
 
 alias explorer="nautilus"
 
+alias emacs-standalone="/usr/bin/emacs -nw"
+alias emacs='emacsclient -nw -a emacs-standalone'
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
