@@ -106,6 +106,8 @@ alias explorer="nautilus"
 alias emacs-standalone="/usr/bin/emacs -nw"
 alias emacs='emacsclient -nw -a emacs-standalone'
 
+alias docker="podman"
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
