@@ -20,3 +20,7 @@ call plug#end()
 
 set nu rnu
 set noswapfile
+
+set ttimeout
+set ttimeoutlen=1
+set ttyfast
