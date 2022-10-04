@@ -20,3 +20,7 @@
 
 set nu rnu
 set noswapfile
+set clipboard+=unnamed
+
+nnoremap <C-i> i_<Esc>r
+

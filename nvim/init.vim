@@ -20,7 +20,10 @@ call plug#end()
 
 set nu rnu
 set noswapfile
+set clipboard+=unnamed
 
 set ttimeout
 set ttimeoutlen=1
 set ttyfast
+
+nnoremap <C-i> i_<Esc>r
