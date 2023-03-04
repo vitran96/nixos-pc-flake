@@ -33,6 +33,5 @@
     }
   ],
   "skiptaskbarhidden": [],
-  "log_on_focus": false,
-  "default_pointer_position": "TOP_LEFT"
+  "log_on_focus": false
 }
