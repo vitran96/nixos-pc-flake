@@ -75,6 +75,8 @@ esac
 export ESHELL="bash"
 export EDITOR="vim"
 
+export JABBA_VERSION="0.11.2"
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -106,7 +108,9 @@ alias explorer="nautilus"
 alias emacs-standalone="/usr/bin/emacs -nw"
 alias emacs='emacsclient -nw -a emacs-standalone'
 
-alias docker="podman"
+# alias docker="podman"
+
+alias ng="npx -p @angular/cli@9 ng"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -140,3 +144,9 @@ set show-mode-in-prompt on
 set vi-cmd-mode-string "\1\e[2 q\2"
 set vi-ins-mode-string "\1\e[6 q\2"
 . "$HOME/.cargo/env"
+
+[ -s "/home/chris/.jabba/jabba.sh" ] && source "/home/chris/.jabba/jabba.sh"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

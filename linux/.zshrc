@@ -86,6 +86,8 @@ source $ZSH/oh-my-zsh.sh
 export ESHELL="zsh"
 export EDITOR="vim"
 
+export JABBA_VERSION="0.11.2"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -141,7 +143,9 @@ alias explorer="nautilus"
 alias emacs-standalone="/usr/bin/emacs -nw"
 alias emacs='emacsclient -nw -a emacs-standalone'
 
-alias docker="podman"
+# alias docker="podman"
+
+alias ng="npx -p @angular/cli@9 ng"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -189,3 +193,9 @@ _fix_cursor() {
 if [ -e /home/chris/.nix-profile/etc/profile.d/nix.sh ]; then . /home/chris/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 precmd_functions+=(_fix_cursor)
+
+[ -s "/home/chris/.jabba/jabba.sh" ] && source "/home/chris/.jabba/jabba.sh"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
