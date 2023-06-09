@@ -145,7 +145,22 @@ alias emacs='emacsclient -nw -a emacs-standalone'
 
 # alias docker="podman"
 
-alias ng="npx -p @angular/cli@9 ng"
+alias ng="npx -p @angular/cli ng"
+
+alias yarn="npx yarn"
+
+function start_docker {
+  sudo systemctl enable docker.service
+  sudo systemctl enable containerd.service
+}
+
+function stop_docker {
+  sudo systemctl disable docker.service
+  sudo systemctl disable containerd.service
+}
+
+# alias start-docker=`start_docker()`
+# alias stop-docker=`stop_docker()`
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -189,6 +204,7 @@ zle -N zle-keymap-select
 _fix_cursor() {
    echo -ne '\e[5 q'
 }
+
 
 if [ -e /home/chris/.nix-profile/etc/profile.d/nix.sh ]; then . /home/chris/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 

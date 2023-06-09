@@ -112,6 +112,8 @@ alias emacs='emacsclient -nw -a emacs-standalone'
 
 alias ng="npx -p @angular/cli@9 ng"
 
+alias yarn="npx yarn"
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
