@@ -113,6 +113,7 @@ alias emacs='emacsclient -nw -a emacs-standalone'
 alias ng="npx -p @angular/cli@9 ng"
 
 alias yarn="npx yarn"
+alias pnpm="npx pnpm"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -121,6 +122,10 @@ alias yarn="npx yarn"
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
+fi
+
+if [ -f ~/.custom.bash_aliases ]; then
+    . ~/.custom.bash_aliases
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -138,7 +143,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-if [ -e /home/chris/.nix-profile/etc/profile.d/nix.sh ]; then . /home/chris/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+# Change vagrant default dir
+# export VAGRANT_HOME=...
+
+if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 set -o vi
 
@@ -147,8 +155,12 @@ set vi-cmd-mode-string "\1\e[2 q\2"
 set vi-ins-mode-string "\1\e[6 q\2"
 . "$HOME/.cargo/env"
 
-[ -s "/home/chris/.jabba/jabba.sh" ] && source "/home/chris/.jabba/jabba.sh"
+[ -s "$HOME/.jabba/jabba.sh" ] && source "$HOME/.jabba/jabba.sh"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# >>>> Vagrant command completion (start)
+. /usr/share/rubygems-integration/all/gems/vagrant-2.2.19/contrib/bash/completion.sh
+# <<<<  Vagrant command completion (end)

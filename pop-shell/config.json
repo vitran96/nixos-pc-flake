@@ -30,6 +30,9 @@
     },
     {
       "class": "obs"
+    },
+    {
+      "class": "balena-etcher"
     }
   ],
   "skiptaskbarhidden": [],

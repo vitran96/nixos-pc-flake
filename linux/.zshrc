@@ -148,6 +148,7 @@ alias emacs='emacsclient -nw -a emacs-standalone'
 alias ng="npx -p @angular/cli ng"
 
 alias yarn="npx yarn"
+alias pnpm="npx pnpm"
 
 function start_docker {
   sudo systemctl enable docker.service
@@ -164,6 +165,14 @@ function stop_docker {
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+if [ -f ~/.custom.bash_aliases ]; then
+    . ~/.custom.bash_aliases
+fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -205,13 +214,21 @@ _fix_cursor() {
    echo -ne '\e[5 q'
 }
 
+# Change vagrant default dir
+# export VAGRANT_HOME=...
 
-if [ -e /home/chris/.nix-profile/etc/profile.d/nix.sh ]; then . /home/chris/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 precmd_functions+=(_fix_cursor)
 
-[ -s "/home/chris/.jabba/jabba.sh" ] && source "/home/chris/.jabba/jabba.sh"
+[ -s "$HOME/.jabba/jabba.sh" ] && source "$HOME/.jabba/jabba.sh"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# >>>> Vagrant command completion (start)
+fpath=(/usr/share/rubygems-integration/all/gems/vagrant-2.2.19/contrib/zsh $fpath)
+compinit
+# <<<<  Vagrant command completion (end)
