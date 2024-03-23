@@ -164,3 +164,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # >>>> Vagrant command completion (start)
 . /usr/share/rubygems-integration/all/gems/vagrant-2.2.19/contrib/bash/completion.sh
 # <<<<  Vagrant command completion (end)
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

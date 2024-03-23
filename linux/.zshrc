@@ -232,3 +232,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 fpath=(/usr/share/rubygems-integration/all/gems/vagrant-2.2.19/contrib/zsh $fpath)
 compinit
 # <<<<  Vagrant command completion (end)
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
