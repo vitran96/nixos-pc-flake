@@ -33,6 +33,12 @@
     },
     {
       "class": "balena-etcher"
+    },
+    {
+      "class": "Cloudflare Zero Trust"
+    },
+    {
+      "class": "Anydesk"
     }
   ],
   "skiptaskbarhidden": [],
