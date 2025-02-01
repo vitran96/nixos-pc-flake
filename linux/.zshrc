@@ -141,14 +141,17 @@ alias doom="$HOME/.emacs.d/bin/doom"
 
 alias explorer="nautilus"
 
-alias emacs-standalone="/usr/bin/emacs -nw"
-alias emacs='emacsclient -nw -a emacs-standalone'
+#alias emacs-standalone="/usr/bin/emacs -nw"
+#alias emacs='emacsclient -nw -a emacs-standalone'
+alias emacs='/usr/bin/emacs -nw'
+alias emacs-server='/usr/bin/emacs -d '
+alias emacs-attach='/usr/bin/emacsclient -f '
 
 # alias docker="podman"
 
 alias ng="npx -p @angular/cli ng"
 
-alias yarn="npx yarn"
+#alias yarn="npx yarn"
 alias pnpm="npx pnpm"
 
 function start_docker {
@@ -183,7 +186,7 @@ export NVM_DIR="$HOME/.nvm"
 # ---------------
 
 # Activate vim mode.
-bindkey -v
+# bindkey -v
 
 # Remove mode switching delay.
 KEYTIMEOUT=5
