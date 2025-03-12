@@ -117,14 +117,14 @@ export JABBA_VERSION="0.11.2"
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  alias ls='ls --color=auto'
+  #alias dir='dir --color=auto'
+  #alias vdir='vdir --color=auto'
 
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+  alias grep='grep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias egrep='egrep --color=auto'
 fi
 
 # colored GCC warnings and errors
@@ -173,11 +173,11 @@ function stop_docker {
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+  . ~/.bash_aliases
 fi
 
 if [ -f ~/.custom.bash_aliases ]; then
-    . ~/.custom.bash_aliases
+  . ~/.custom.bash_aliases
 fi
 
 export NVM_DIR="$HOME/.nvm"
@@ -200,9 +200,9 @@ function zle-keymap-select {
     echo -ne '\e[1 q'
 
   elif [[ ${KEYMAP} == main ]] ||
-        [[ ${KEYMAP} == viins ]] ||
-        [[ ${KEYMAP} = '' ]] ||
-        [[ $1 = 'beam' ]]; then
+      [[ ${KEYMAP} == viins ]] ||
+      [[ ${KEYMAP} = '' ]] ||
+      [[ $1 = 'beam' ]]; then
     echo -ne '\e[5 q'
   fi
 }
@@ -217,7 +217,7 @@ zle -N zle-keymap-select
 # }
 
 _fix_cursor() {
-   echo -ne '\e[5 q'
+  echo -ne '\e[5 q'
 }
 
 # Change vagrant default dir
