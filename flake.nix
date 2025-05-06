@@ -2,7 +2,7 @@
   description = "My dotfiles + Home Manager config";
 
   outputs = { self, ... }: {
-    homeConfigurations.king = { pkgs, ... }: {
+    homeConfigurations.vi-tran = { pkgs, ... }: {
       home.username = "vi-tran";
       home.homeDirectory = "/home/vi-tran";
 
