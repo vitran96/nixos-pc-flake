@@ -7,8 +7,10 @@
       home.homeDirectory = "/home/vi-tran";
 
       home.packages = with pkgs; [ 
-        godot 
+        godot_4
 	gh 
+	aseprite
+	vscode
       ];
 
       programs.git = {
