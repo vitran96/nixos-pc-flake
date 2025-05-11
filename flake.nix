@@ -8,9 +8,16 @@
 
       home.packages = with pkgs; [ 
         godot_4
-	gh 
-	aseprite
-	vscode
+        gh 
+        aseprite
+        vscode
+        # ===== 1password =====
+        _1password-gui
+        _1password-cli
+        # =====================
+        wezterm
+        jetbrains-toolbox
+        discord-ptb
       ];
 
       programs.git = {
@@ -19,9 +26,22 @@
         userEmail = "38664902+vitran96@users.noreply.github.com";
       };
 
-      # Symlink dotfiles (assuming they're in this repo)
-      home.file.".config/nvim".source = ./nvim;
-      #home.file.".bashrc".source = ./bashrc;
+      programs.steam = {
+        enable = true;
+        remotePlay.openFirewall = true;
+        dedicatedServer.openFirewall = true;
+        localNetworkGameTransfers.openFirewall = true;
+      };
+
+      programs.nano.enable = false;
+
+      # ===========Symlink dotfiles============
+      # Assuming they're in this repo
+      # Symlink files are READ-ONLY
+      #
+      # home.file.".config/nvim".source = ./nvim;
+      # home.file.".bashrc".source = ./bashrc;
+      # =======================================
 
       home.stateVersion = "24.11";
     };
