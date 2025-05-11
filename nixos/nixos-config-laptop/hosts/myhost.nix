@@ -12,8 +12,35 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
+  # ========== NetworkManager ==========
+  # Try to fix captive portal issue
   # Enable networking
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    # dns = "dnsmasq";
+    # extraConfig = ''
+    #   [keyfile]
+    #   path = /var/lib/NetworkManager/system-connections
+    #   [connectivity]
+    #   uri = http://google.com/generate_204
+    #   response =
+    # '';
+    # unmanaged = [
+    #   "interface-name:virbr*"
+    #   "lo"
+    # ];
+  };
+
+  # Disable resolvconf
+  # Otherwise, NetworkManager would use resolvconf to update /etc/resolv.conf
+  # networking.resolvconf.enable = false;
+
+  # Manually configures a working /etc/resolv.conf
+  # since there is no one to update it
+  # environment.etc."resolv.conf".text = ''
+  #   nameserver 127.0.53.53
+  # '';
+  # ====================================
 
   time.timeZone = "Asia/Ho_Chi_Minh";
 
@@ -68,6 +95,15 @@
     #media-session.enable = true;
   };
 
+  # Solaar
+  # services.solaar = {
+  #   enable = true; # Enable the service
+  #   # package = pkgs.solaar; # The package to use
+  #   window = "hide"; # Show the window on startup (show, *hide*, only [window only])
+  #   batteryIcons = "regular"; # Which battery icons to use (*regular*, symbolic, solaar)
+  #   extraArgs = ""; # Extra arguments to pass to solaar on startup
+  # };
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -80,46 +116,33 @@
   # Install firefox.
   programs.firefox.enable = true;
 
-  #programs.nano.enable = false;
-
-  #programs.steam = {
-  #  enable = true;
-  #  remotePlay.openFirewall = true;
-  #  dedicatedServer.openFirewall = true;
-  #  localNetworkGameTransfers.openFirewall = true;
-  #};
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   #virtualisation.containers.enable = true;
-  #virtualisation = {
-  #  podman = {
-  #    enable = true;
-  #    dockerCompat = true;
-  #    defaultNetwork.settings.dns_enabled = true;
-  #  };
-  #};
+  virtualisation = {
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     neovim
-     wget
-     git
-     zsh
-     # podman packages
-     #dive
-     #podman-tui
-     #podman-compose
+    neovim
+    wget
+    git
+    zsh
+    # ===podman packages===
+    dive
+    podman-tui
+    podman-compose
+    # =====================
   ];
 
-  #programs.neovim = {
-  #  viAlias = true;
-  #  vimAlias = true;
-  #};
-
-  # environment.extraInit = 
 
   environment.variables.EDITOR = "nvim";
   environment.variables.VISUAL = "nvim";
