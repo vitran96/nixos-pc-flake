@@ -41,7 +41,7 @@
         localNetworkGameTransfers.openFirewall = true;
       };
 
-      programs.nano.enable = false;
+      # programs.nano.enable = false;
 
       # ===========Symlink dotfiles============
       # Assuming they're in this repo
