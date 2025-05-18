@@ -7,16 +7,17 @@
       home.homeDirectory = "/home/vi-tran";
 
       home.packages = with pkgs; [ 
-        godot_4
-        gh 
+        gh
         aseprite
+        # godot_4
+        love
         vscode
         # ===== 1password =====
         _1password-gui
         _1password-cli
         # =====================
         wezterm
-        jetbrains-toolbox
+        # jetbrains-toolbox
         discord-ptb
       ];
 
@@ -24,6 +25,13 @@
         enable = true;
         userName = "vitran96";
         userEmail = "38664902+vitran96@users.noreply.github.com";
+
+        extraConfig = ''
+          [credential "https://github.com"]
+            helper = "!gh auth git-credential"
+          [credential "https://gist.github.com"]
+            helper = "!gh auth git-credential"
+        '';
       };
 
       programs.steam = {
