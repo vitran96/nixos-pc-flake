@@ -19,6 +19,9 @@
         wezterm
         # jetbrains-toolbox
         discord-ptb
+        cloudflare-warp
+        dbeaver-bin
+        direnv
       ];
 
       programs.git = {
