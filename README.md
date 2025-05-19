@@ -16,3 +16,4 @@
 | 12  | WinTerminal/settings.json                          | ~/AppData/Local/Microsoft/Windows Terminal/settings.json       | Windows |      |
 | 13  | .spacemacs                                         | ~/.spacemacs                                                   | Linux   |      |
 | 14  | nvim/init.vim                                      | ~/.config/nvim/init.vim                                        | Linux   |      |
+| 15  | .zimrc                                             | ~/.zimrc                                                       | Linux   |      |
