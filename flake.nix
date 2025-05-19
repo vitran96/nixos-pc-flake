@@ -22,7 +22,15 @@
         cloudflare-warp
         dbeaver-bin
         direnv
+        obsidian
+        # obs-studio
+        safe-rm
+        # bat
+        # lsd
+        (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
       ];
+
+      fonts.fontconfig.enable = true;
 
       programs.git = {
         enable = true;
@@ -37,21 +45,20 @@
         '';
       };
 
-      # programs.steam = {
-      #   enable = true;
-      #   remotePlay.openFirewall = true;
-      #   dedicatedServer.openFirewall = true;
-      #   localNetworkGameTransfers.openFirewall = true;
-      # };
-
-      # programs.nano.enable = false;
+      # NOTE: for some reason, [steam, nano] cannot be configured with home-manager
 
       # ===========Symlink dotfiles============
       # Assuming they're in this repo
       # Symlink files are READ-ONLY
       #
-      # home.file.".config/nvim".source = ./nvim;
-      # home.file.".bashrc".source = ./bashrc;
+      home.file.".config/nvim".source = ./nvim;
+      home.file.".zshrc".source = ./zsh-zim/.zshrc;
+      home.file.".zshenv".source = ./zsh-zim/.zshenv;
+      home.file.".zsh_aliases".source = ./zsh-zim/.zsh_aliases;
+      home.file.".zsh_hook".source = ./zsh-zim/.zsh_hook;
+      home.file.".zimrc".source = ./zsh-zim/.zimrc;
+      # wezterm lua file
+      # spacemacs file
       # =======================================
 
       home.stateVersion = "24.11";
