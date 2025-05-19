@@ -27,6 +27,7 @@
         safe-rm
         # bat
         # lsd
+        flameshot
         (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
       ];
 
@@ -42,6 +43,13 @@
             helper = "!gh auth git-credential"
           [credential "https://gist.github.com"]
             helper = "!gh auth git-credential"
+          [filter "lfs"]
+            clean = "git-lfs clean -- %f"
+            smudge = "git-lfs smudge --skip -- %f"
+            process = "git-lfs filter-process"
+            required = true
+          [commit]
+            gpgSign = true
         '';
       };
 
