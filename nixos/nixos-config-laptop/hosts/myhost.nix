@@ -96,13 +96,13 @@
   };
 
   # Solaar
-  # services.solaar = {
-  #   enable = true; # Enable the service
-  #   # package = pkgs.solaar; # The package to use
-  #   window = "hide"; # Show the window on startup (show, *hide*, only [window only])
-  #   batteryIcons = "regular"; # Which battery icons to use (*regular*, symbolic, solaar)
-  #   extraArgs = ""; # Extra arguments to pass to solaar on startup
-  # };
+  services.solaar = {
+    enable = true; # Enable the service
+    # package = pkgs.solaar; # The package to use
+    window = "hide"; # Show the window on startup (show, *hide*, only [window only])
+    batteryIcons = "regular"; # Which battery icons to use (*regular*, symbolic, solaar)
+    extraArgs = ""; # Extra arguments to pass to solaar on startup
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -113,9 +113,21 @@
     # set password
   };
 
-  # Install firefox.
+  # Firefox.
   programs.firefox.enable = true;
 
+  # Nano
+  # Since my home-manager don't have this, it seems I cannot disable it
+  programs.nano.enable = false;
+
+  # Steam
+  # cannot install with home-manager
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+    localNetworkGameTransfers.openFirewall = true;
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -141,6 +153,12 @@
     podman-tui
     podman-compose
     # =====================
+    # ===kvm + qemu packages===
+    # =========================
+    # ===vagrant packages===
+    # ======================
+    # ===virtualbox packages===
+    # =========================
   ];
 
 
