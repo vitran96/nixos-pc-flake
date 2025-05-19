@@ -111,6 +111,7 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
     # set password
+    shell = pkgs.zsh;
   };
 
   # Firefox.
