@@ -107,48 +107,15 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  users.users.vi-tran = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
-    # set password
-    shell = pkgs.zsh;
-  };
-
-  # Firefox.
-  programs.firefox.enable = true;
-
-  # Nano
-  # Since my home-manager don't have this, it seems I cannot disable it
-  programs.nano.enable = false;
-
-  # Steam
-  # cannot install with home-manager
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-    localNetworkGameTransfers.openFirewall = true;
-  };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  #virtualisation.containers.enable = true;
-  virtualisation = {
-    podman = {
-      enable = true;
-      dockerCompat = true;
-      defaultNetwork.settings.dns_enabled = true;
-    };
-  };
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     neovim
     wget
     git
+    git-lfs
     zsh
+    gnupg
     # ===podman packages===
     dive
     podman-tui
@@ -167,6 +134,43 @@
   environment.variables.VISUAL = "nvim";
 
   environment.gnome.excludePackages = [ pkgs.gnome-tour ];
+
+  # Firefox.
+  programs.firefox.enable = true;
+
+  # Nano
+  # Since my home-manager don't have this, it seems I cannot disable it
+  programs.nano.enable = false;
+
+  # Steam
+  # cannot install with home-manager
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+    localNetworkGameTransfers.openFirewall = true;
+  };
+
+  # Zsh
+  # Without this, cannot change user shell to zsh
+  programs.zsh.enable = true;
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
+  #virtualisation.containers.enable = true;
+  virtualisation = {
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  };
+
+  # gpgconf --kill gpg-agent
+  programs.gnupg.agent = {
+    enable = true;
+  };
 
   # Below are package that should be user-only
 
@@ -188,6 +192,13 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+
+  users.users.vi-tran = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "networkmanager" ];
+    # set password
+    shell = pkgs.zsh;
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
