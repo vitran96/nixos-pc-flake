@@ -107,6 +107,23 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+
+  # nixpkgs.config.permittedInsecurePackages = [
+  #   "electron-25.9.0"
+  # ];
+
+  # nix.gc = { 
+  #   automatic = true;
+  #   dates = "weekly";
+  #   options = "--delete-older-than 7d";
+  # };
+
+  # services.flatpak.enable = true;
+
+  # system.autoUpgrade = {
+  #   enable = true;
+  # };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -121,6 +138,11 @@
     podman-tui
     podman-compose
     # =====================
+    # ===ibus packages===
+    # NOTE: might require manual desktop enable the config
+    ibus-engines.bamboo
+    ibus
+    # ====================
     # ===kvm + qemu packages===
     # =========================
     # ===vagrant packages===
@@ -208,4 +230,3 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
 }
-
