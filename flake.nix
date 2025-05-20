@@ -65,6 +65,7 @@
       # Symlink files are READ-ONLY
       #
       home.file.".config/nvim".source = ./nvim;
+      home.file.".config/flameshot/flameshot.ini".source = ./flameshot/flameshot.ini;
       home.file.".zshrc".source = ./zsh-zim/.zshrc;
       home.file.".zshenv".source = ./zsh-zim/.zshenv;
       home.file.".zsh_aliases".source = ./zsh-zim/.zsh_aliases;
