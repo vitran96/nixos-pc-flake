@@ -74,6 +74,20 @@
       # spacemacs file
       # =======================================
 
+      # Clone spacemacs
+      home.file.".emacs.d" = {
+        # don't make the directory read only so that impure melpa can still happen
+        # for now
+        recursive = true;
+        source = pkgs.fetchFromGitHub {
+          owner = "syl20bnr";
+          repo = "spacemacs";
+          rev = "491e17ba9cdcb253a3292a3049abb8767c91b9bb";
+        };
+      };
+
+      # NOTE: avoid running nvim
+      # else ~/.local/share/nvim/site/autoload/ will be created with unwanted own & mod
       home.stateVersion = "24.11";
     };
   };
