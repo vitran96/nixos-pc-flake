@@ -43,6 +43,7 @@
         userName = "vitran96";
         userEmail = "38664902+vitran96@users.noreply.github.com";
 
+        # DEPRECATED
         extraConfig = ''
           [credential "https://github.com"]
             helper = "!gh auth git-credential"
@@ -66,13 +67,13 @@
       #
       home.file.".config/nvim".source = ./nvim;
       home.file.".config/flameshot/flameshot.ini".source = ./flameshot/flameshot.ini;
+      home.file.".config/wezterm".source = ./wezterm;
+      home.file".spacemacs".source = ./.spacemacs;
       home.file.".zshrc".source = ./zsh-zim/.zshrc;
       home.file.".zshenv".source = ./zsh-zim/.zshenv;
       home.file.".zsh_aliases".source = ./zsh-zim/.zsh_aliases;
       home.file.".zsh_hook".source = ./zsh-zim/.zsh_hook;
       home.file.".zimrc".source = ./zsh-zim/.zimrc;
-      # wezterm lua file
-      # spacemacs file
       # =======================================
 
       # Clone spacemacs
@@ -84,11 +85,16 @@
           owner = "syl20bnr";
           repo = "spacemacs";
           rev = "491e17ba9cdcb253a3292a3049abb8767c91b9bb";
+          sha256 = "DEKvlFi2927oGfaxnhCWd7AYU0TD8yyaWg4I+Fx+8V0=";
         };
       };
 
       # NOTE: avoid running nvim
       # else ~/.local/share/nvim/site/autoload/ will be created with unwanted own & mod
+
+      # NOTE: config keybind for Gnome
+      # https://discourse.nixos.org/t/nixos-options-to-configure-gnome-keyboard-shortcuts/7275/15
+
       home.stateVersion = "24.11";
     };
   };

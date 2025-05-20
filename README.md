@@ -10,7 +10,7 @@
 | 6   | gh/config.yml                                      | ~/.config/gh/config.yml                                        | Linux   |      |
 | 7   | flameshot/flameshot.ini                            | ~/.config/flameshot/flameshot.ini                              | Linux   |      |
 | 8   | alacrity/alacritty.yml                             | ~/.config/alacritty/alacritty.yml                              | Linux   |      |
-| 9   | wezterm/wezterm.lua                                | ~/.config/wezterm/wezterm.lua                                  | Linux   |      |
+| 9   | wezterm/                                           | ~/.config/wezterm                                              | Linux   |      |
 | 10  | PowerToys/config.json                              | ~/AppData/Local/Microsoft/PowerToys/settings.json              | Windows |      |
 | 11  | WindowsPowershell/Microsoft.PowerShell_profile.ps1 | ~/Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1 | Windows |      |
 | 12  | WinTerminal/settings.json                          | ~/AppData/Local/Microsoft/Windows Terminal/settings.json       | Windows |      |
