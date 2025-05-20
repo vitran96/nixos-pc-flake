@@ -12,6 +12,7 @@
         # godot_4
         love
         vscode
+        emacs
         # ===== 1password =====
         _1password-gui
         _1password-cli
@@ -19,14 +20,18 @@
         wezterm
         # jetbrains-toolbox
         discord-ptb
+        # `warp-svc` & `warp-cli register` to start (https://discourse.nixos.org/t/cant-start-cloudflare-warp-cli/23267)
         cloudflare-warp
         dbeaver-bin
-        direnv
         obsidian
-        # obs-studio
+        # === CLI enhancements ===
+        direnv
         safe-rm
-        # bat
-        # lsd
+        bat
+        lsd
+        ripgrep
+        # ========================
+        # obs-studio
         flameshot
         (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
       ];
