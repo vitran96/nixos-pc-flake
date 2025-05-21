@@ -4,8 +4,8 @@ local wezterm = require 'wezterm'
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
--- NOTE: should only enable if $XDG_SESSION_TYPE is set to wayland
-config.enable_wayland = true
+local session_type = os.getenv("XDG_SESSION_TYPE")
+config.enable_wayland = session_type == "wayland"
 
 -- This is where you actually apply your config choices.
 
@@ -90,6 +90,8 @@ config.font = wezterm.font_with_fallback {
 -- }
 
 -- Key binding advance: https://wezterm.org/config/key-tables.html
+
+config.window_decorations = "TITLE | RESIZE"
 
 -- Finally, return the configuration to wezterm:
 return config
