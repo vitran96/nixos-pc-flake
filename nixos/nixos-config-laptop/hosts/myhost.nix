@@ -43,6 +43,10 @@
   # ====================================
 
   time.timeZone = "Asia/Ho_Chi_Minh";
+  
+  i18n.supportedLocales = [
+    "all"
+  ];
 
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -56,6 +60,7 @@
     LC_PAPER = "en_US.UTF-8";
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
+    LC_ALL = "C.UTF-8";
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -112,17 +117,20 @@
   #   "electron-25.9.0"
   # ];
 
-  # nix.gc = { 
-  #   automatic = true;
-  #   dates = "weekly";
-  #   options = "--delete-older-than 7d";
-  # };
+  # Enable the auto cleanup of old generations
+  nix.gc = { 
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 14d";
+  };
 
   # services.flatpak.enable = true;
 
   # system.autoUpgrade = {
   #   enable = true;
   # };
+
+  # nixpkgs.overlays = [ (import ../overlays/ibus-bamboo.nix) ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -140,8 +148,8 @@
     # =====================
     # ===ibus packages===
     # NOTE: might require manual desktop enable the config
-    ibus-engines.bamboo
-    ibus
+    # ibus-engines.bamboo
+    # ibus
     # ====================
     # ===kvm + qemu packages===
     # =========================
@@ -194,11 +202,34 @@
     enable = true;
   };
 
+  # NOTE: not working
+  # ibus-bamboo: https://github.com/BambooEngine/ibus-bamboo
+  # i18n.inputMethod = {
+  #   type = "ibus";
+  #   enable = true;
+  #   ibus.engines = with pkgs.ibus-engines; [
+  #     bamboo
+  #   ];
+  # };
+
+  # Fcitx5: https://nixos.wiki/wiki/Fcitx5
+  environment.variables = {
+    GTK_IM_MODULE = "fcitx";
+    QT_IM_MODULE = "fcitx";
+    XMODIFIERS = "@im=fcitx";
+  };
   i18n.inputMethod = {
-    enabled = "ibus";
-    ibus.engines = with pkgs.ibus-engines; [
-      bamboo
-    ];
+    type = "fcitx5";
+    enable = true;
+    fcitx5 = {
+      addons = with pkgs; [
+        fcitx5-gtk             # alternatively, kdePackages.fcitx5-qt
+        fcitx5-bamboo          # table input method support
+        fcitx5-unikey          # table input method support
+        fcitx5-nord            # a color theme
+      ];
+      waylandFrontend = true;
+    };
   };
 
   # Below are package that should be user-only
