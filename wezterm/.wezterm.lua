@@ -4,6 +4,9 @@ local wezterm = require 'wezterm'
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
+-- NOTE: should only enable if $XDG_SESSION_TYPE is set to wayland
+config.enable_wayland = true
+
 -- This is where you actually apply your config choices.
 
 -- For example, changing the initial geometry for new windows:
