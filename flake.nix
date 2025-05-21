@@ -78,6 +78,7 @@
       # =======================================
 
       # Clone spacemacs
+      # Use commit from develop branch since spacemacs is a rolling release
       home.file.".emacs.d" = {
         # don't make the directory read only so that impure melpa can still happen
         # for now
@@ -85,7 +86,7 @@
         source = pkgs.fetchFromGitHub {
           owner = "syl20bnr";
           repo = "spacemacs";
-          rev = "491e17ba9cdcb253a3292a3049abb8767c91b9bb";
+          rev = "72cf32d2adfe07a3254f31a308a8195b5c1e37e9";
           sha256 = "DEKvlFi2927oGfaxnhCWd7AYU0TD8yyaWg4I+Fx+8V0=";
         };
       };
