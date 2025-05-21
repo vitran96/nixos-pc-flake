@@ -91,6 +91,7 @@ config.font = wezterm.font_with_fallback {
 
 -- Key binding advance: https://wezterm.org/config/key-tables.html
 
+-- https://wezterm.org/config/lua/config/window_decorations.html
 config.window_decorations = "TITLE | RESIZE"
 
 -- Finally, return the configuration to wezterm:
