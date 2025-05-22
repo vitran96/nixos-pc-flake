@@ -79,17 +79,19 @@
 
       # Clone spacemacs
       # Use commit from develop branch since spacemacs is a rolling release
-      home.file.".emacs.d" = {
-        # don't make the directory read only so that impure melpa can still happen
-        # for now
-        recursive = true;
-        source = pkgs.fetchFromGitHub {
-          owner = "syl20bnr";
-          repo = "spacemacs";
-          rev = "72cf32d2adfe07a3254f31a308a8195b5c1e37e9";
-          sha256 = "DEKvlFi2927oGfaxnhCWd7AYU0TD8yyaWg4I+Fx+8V0=";
-        };
-      };
+      # NOTE: the sha256 is wrong. use nix-repl to check
+      # disable this since it will make the directory read-only
+      # home.file.".emacs.d" = {
+      #   # don't make the directory read only so that impure melpa can still happen
+      #   # for now
+      #   recursive = true;
+      #   source = pkgs.fetchFromGitHub {
+      #     owner = "syl20bnr";
+      #     repo = "spacemacs";
+      #     rev = "72cf32d2adfe07a3254f31a308a8195b5c1e37e9";
+      #     sha256 = "DEKvlFi2927oGfaxnhCWd7AYU0TD8yyaWg4I+Fx+8V0=";
+      #   };
+      # };
 
       # NOTE: avoid running nvim
       # else ~/.local/share/nvim/site/autoload/ will be created with unwanted own & mod
