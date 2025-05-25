@@ -6,6 +6,7 @@
       home.username = "vi-tran";
       home.homeDirectory = "/home/vi-tran";
 
+      # NOTE: consider GNU stow or chezmoi for dotfiles management
       home.packages = with pkgs; [ 
         gh
         aseprite
@@ -29,7 +30,21 @@
         safe-rm
         bat
         lsd
+        # eza
         ripgrep
+        btop
+        htop
+        zoxide
+        fzf
+        ranger # file manager
+        # yazu # file manager
+        fd # find alternative
+        tree
+        # tokei # code counter
+        du-dust # du alternative
+        dua # du alternative
+        # gitui
+        # nushell
         # ========================
         # obs-studio
         flameshot
