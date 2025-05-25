@@ -17,3 +17,4 @@
 | 13  | .spacemacs                                         | ~/.spacemacs                                                   | Linux   |      |
 | 14  | nvim/init.vim                                      | ~/.config/nvim/init.vim                                        | Linux   |      |
 | 15  | .zimrc                                             | ~/.zimrc                                                       | Linux   |      |
+| 16  | fcitx5/                                            | ~/.config/fcitx5/                                              | Linux   |      |
