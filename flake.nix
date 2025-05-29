@@ -10,6 +10,7 @@
       home.packages = with pkgs; [ 
         gh
         aseprite
+        tiled
         # godot_4
         love
         vscode
