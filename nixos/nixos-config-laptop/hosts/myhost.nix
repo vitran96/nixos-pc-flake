@@ -145,6 +145,9 @@
     dive
     podman-tui
     podman-compose
+    # ===flameshot dependencies===
+    xdg-desktop-portal
+    xdg-desktop-portal-gnome
     # =====================
     # ===ibus packages===
     # NOTE: might require manual desktop enable the config
