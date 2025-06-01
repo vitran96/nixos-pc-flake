@@ -2,11 +2,11 @@
   "nodes": {
     "dotfiles": {
       "locked": {
-        "lastModified": 1748533217,
-        "narHash": "sha256-GzTIP70z6jXhWdbPKw+P4EutRwTEWuyKGuDk+lqvcZA=",
+        "lastModified": 1748788026,
+        "narHash": "sha256-1vfK3AInsTD3a7Ogol3u6kVJ+2bwJ9uftM8qzFxKsig=",
         "owner": "vitran96",
         "repo": ".dotfiles",
-        "rev": "7bd8b338c385e274bd3e0b51df61087c6deaf48d",
+        "rev": "43306ed4ce03e71158a219c70a498f6ac6bde68e",
         "type": "github"
       },
       "original": {
