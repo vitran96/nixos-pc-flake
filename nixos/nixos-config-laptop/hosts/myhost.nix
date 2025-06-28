@@ -16,8 +16,8 @@
   # ========== NetworkManager ==========
   # Try to fix captive portal issue
   # Enable networking
-  networking.networkmanager = {
-    enable = true;
+  # networking.networkmanager = {
+    # enable = true;
     # dns = "dnsmasq";
     # extraConfig = ''
     #   [keyfile]
@@ -30,7 +30,16 @@
     #   "interface-name:virbr*"
     #   "lo"
     # ];
-  };
+  # };
+
+  networking.useNetworkd = true;
+  networking.dhcpcd.enable = false;
+  networking.useDHCP = false;
+
+  services.resolved.enable = true;
+  services.resolved.dnssec = "false";
+
+  networking.resolvconf.dnsExtensionMechanism = false;
 
   # Disable resolvconf
   # Otherwise, NetworkManager would use resolvconf to update /etc/resolv.conf
