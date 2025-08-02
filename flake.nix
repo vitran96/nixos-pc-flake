@@ -47,6 +47,7 @@
         # gitui
         # nushell
         # ========================
+        libreoffice
         # obs-studio
         flameshot
         (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
