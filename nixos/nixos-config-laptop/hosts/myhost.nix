@@ -7,31 +7,9 @@
   boot.loader.timeout = 5; # Timeout for the boot menu in seconds.
 
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # ========== NetworkManager ==========
   # Try to fix captive portal issue
-  # Enable networking
-  # networking.networkmanager = {
-    # enable = true;
-    # dns = "dnsmasq";
-    # extraConfig = ''
-    #   [keyfile]
-    #   path = /var/lib/NetworkManager/system-connections
-    #   [connectivity]
-    #   uri = http://google.com/generate_204
-    #   response =
-    # '';
-    # unmanaged = [
-    #   "interface-name:virbr*"
-    #   "lo"
-    # ];
-  # };
-
   networking.useNetworkd = true;
   networking.dhcpcd.enable = false;
   networking.useDHCP = false;
@@ -41,15 +19,8 @@
 
   networking.resolvconf.dnsExtensionMechanism = false;
 
-  # Disable resolvconf
-  # Otherwise, NetworkManager would use resolvconf to update /etc/resolv.conf
-  # networking.resolvconf.enable = false;
+  systemd.network.wait-online.enable = false;
 
-  # Manually configures a working /etc/resolv.conf
-  # since there is no one to update it
-  # environment.etc."resolv.conf".text = ''
-  #   nameserver 127.0.53.53
-  # '';
   # ====================================
 
   time.timeZone = "Asia/Ho_Chi_Minh";
@@ -122,25 +93,12 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-
-  # nixpkgs.config.permittedInsecurePackages = [
-  #   "electron-25.9.0"
-  # ];
-
   # Enable the auto cleanup of old generations
   nix.gc = { 
     automatic = true;
     dates = "weekly";
     options = "--delete-older-than 14d";
   };
-
-  # services.flatpak.enable = true;
-
-  # system.autoUpgrade = {
-  #   enable = true;
-  # };
-
-  # nixpkgs.overlays = [ (import ../overlays/ibus-bamboo.nix) ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -158,11 +116,6 @@
     # ===flameshot dependencies===
     xdg-desktop-portal
     xdg-desktop-portal-gnome
-    # =====================
-    # ===ibus packages===
-    # NOTE: might require manual desktop enable the config
-    # ibus-engines.bamboo
-    # ibus
     # ====================
     # ===kvm + qemu packages===
     # =========================
