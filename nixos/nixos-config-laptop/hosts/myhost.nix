@@ -123,6 +123,9 @@
     # ======================
     # ===virtualbox packages===
     # =========================
+    # App image
+    gearlever
+    appimage-run
   ];
 
 
@@ -150,6 +153,10 @@
   # Zsh
   # Without this, cannot change user shell to zsh
   programs.zsh.enable = true;
+
+  # Enable Appimage
+  programs.appimage.enable = true;
+  programs.appimage.binfmt = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
