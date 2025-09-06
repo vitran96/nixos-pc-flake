@@ -76,43 +76,6 @@
         '';
       };
 
-      # NOTE: for some reason, [steam, nano] cannot be configured with home-manager
-
-      # ===========Symlink dotfiles============
-      # Assuming they're in this repo
-      # Symlink files are READ-ONLY
-      #
-      home.file.".config/nvim".source = ./nvim;
-      home.file.".config/flameshot/flameshot.ini".source = ./flameshot/flameshot.ini;
-      home.file.".config/wezterm".source = ./wezterm;
-      home.file.".spacemacs".source = ./.spacemacs;
-      # home.file.".config/fcitx5".source = ./fcitx5;
-      home.file.".zshrc".source = ./zsh-zim/.zshrc;
-      home.file.".zshenv".source = ./zsh-zim/.zshenv;
-      home.file.".zsh_aliases".source = ./zsh-zim/.zsh_aliases;
-      home.file.".zsh_hook".source = ./zsh-zim/.zsh_hook;
-      home.file.".zimrc".source = ./zsh-zim/.zimrc;
-      # =======================================
-
-      # Clone spacemacs
-      # Use commit from develop branch since spacemacs is a rolling release
-      # NOTE: the sha256 is wrong. use nix-repl to check
-      # disable this since it will make the directory read-only
-      # home.file.".emacs.d" = {
-      #   # don't make the directory read only so that impure melpa can still happen
-      #   # for now
-      #   recursive = true;
-      #   source = pkgs.fetchFromGitHub {
-      #     owner = "syl20bnr";
-      #     repo = "spacemacs";
-      #     rev = "72cf32d2adfe07a3254f31a308a8195b5c1e37e9";
-      #     sha256 = "DEKvlFi2927oGfaxnhCWd7AYU0TD8yyaWg4I+Fx+8V0=";
-      #   };
-      # };
-
-      # NOTE: avoid running nvim
-      # else ~/.local/share/nvim/site/autoload/ will be created with unwanted own & mod
-
       # NOTE: config keybind for Gnome
       # https://discourse.nixos.org/t/nixos-options-to-configure-gnome-keyboard-shortcuts/7275/15
 
